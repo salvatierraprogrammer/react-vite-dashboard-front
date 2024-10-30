@@ -1,0 +1,106 @@
+/* Reset de estilo */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Variables de colores y tamaños */
+:root {
+  --color-primary: #1976d2;
+  --color-background: #f5f5f5;
+  --color-sidebar: #ffffff;
+  --color-text: #333333;
+  --header-height: 64px;
+  --sidebar-width: 240px;
+}
+
+/* Estilo del layout principal */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--color-sidebar);
+  padding: 20px;
+  position: fixed;
+  top: var(--header-height);
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.sidebar .MuiListItem-root {
+  color: var(--color-text);
+}
+
+.sidebar .MuiListItemIcon-root {
+  color: var(--color-primary);
+}
+
+/* Estilo del encabezado */
+.header {
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+/* Contenido principal */
+/* .main-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: var(--sidebar-width);
+  margin-top: var(--header-height);
+  transition: margin 0.3s ease;
+} */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-top: 64px;
+  transition: margin 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding: 10px;
+    margin-left: 0;
+  }
+}
+.main-content h4 {
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.main-content p {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .main-content {
+    margin-left: 60px;
+  }
+}
